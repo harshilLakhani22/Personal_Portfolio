@@ -1,24 +1,16 @@
 export const skillsData = [
-  'HTML',
-  'CSS',
+  'Java',
   'Javascript',
-  'Typescript',
-  'React',
-  'Next JS',
-  'Tailwind',
-  'MongoDB',
-  'MySQL',
-  'PostgreSQL',
-  'Git',
-  'AWS',
-  'Bootstrap',
-  'Docker',
-  'Go',
-  'Figma',
+  'Dart',
+  'Python',
+  'C++',
+  'Flutter',
   'Firebase',
-  'MaterialUI',
-  'Nginx',
-  'Strapi'
+  'Node.js',
+  'MongoDB',
+  'Express.js',
+  // 'MySQL',
+  'GitHub'
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.

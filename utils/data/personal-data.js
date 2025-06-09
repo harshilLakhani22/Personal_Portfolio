@@ -1,17 +1,20 @@
 export const personalData = {
-  name: "ABU SAID",
-  profile: '/profile.png',
+  name: "Harshil Lakhani",
+  profile: '/profile1.jpg',
   designation: "Software Developer",
-  description: "My name is ABU SAID. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
-  email: 'abusaid7388@gmail.com',
-  phone: '+8801608797655',
-  address: 'Middle Badda, Dhaka, Bangladesh - 1212 ',
-  github: 'https://github.com/said7388',
-  facebook: 'https://www.facebook.com/abusaid.riyaz/',
-  linkedIn: 'https://www.linkedin.com/in/abu-said-bd/',
-  twitter: 'https://twitter.com/said7388',
-  stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-  leetcode: "https://leetcode.com/said3812/",
-  devUsername: "said7388",
-  resume: "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing"
+  description: `👋 Hi, I'm Harshil Lakhani — a curious mind fueled by code and creativity. I'm a professional programmer with a strong self-learning drive and a passion for turning ideas into real-world solutions.
+
+From building smooth mobile experiences with Flutter to crafting scalable APIs in Node.js, I thrive across the full-stack spectrum. Lately, I've been diving deeper into the MERN stack, expanding my toolkit to build web apps that are fast, modern, and impactful.
+
+I'm always excited to explore new technologies, tackle challenges, and contribute to making the web a more open and powerful space. If it involves clean code, elegant UI, and solving real problems — I'm all in.
+
+💼 Open to opportunities that align with my skills, vision, and thirst for learning.`,
+  email: 'harshillakhani2264@gmail.com',
+  phone: '+91 8140010069',
+  address: 'Surat, Gujarat, India',
+  github: 'https://github.com/harshilLakhani22',
+  linkedIn: 'https://www.linkedin.com/in/harshil-lakhani-21428a22b/',
+  leetcode: "https://leetcode.com/u/HarshilLakhani/",
+  twitter: "https://x.com/HariLakhani4208",
+  resume: "https://drive.google.com/file/d/1Au4mby5xrn0Kd6K-JRHOdfUSgWYY8hM-/view?usp=sharing"
 }

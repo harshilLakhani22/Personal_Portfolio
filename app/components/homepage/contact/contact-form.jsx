@@ -2,7 +2,7 @@
 // @flow strict
 import { isValidEmail } from "@/utils/check-email";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
 
@@ -47,16 +47,80 @@ function ContactForm() {
         message: "",
       });
     } catch (error) {
-      toast.error(error?.response?.data?.message);
+      toast.error("An error occurred. Please try with the email button.");
     } finally {
       setIsLoading(false);
     };
   };
 
+  useEffect(() => {
+    const CONTAINER = document.querySelector(`.glow-container-contact-form`);
+    const CARD = document.querySelector(`.glow-card-contact-form`);
+
+    if (!CONTAINER || !CARD) return;
+
+    const CONFIG = {
+      proximity: 40,
+      spread: 80,
+      blur: 12,
+      gap: 32,
+      vertical: false,
+      opacity: 0,
+    };
+
+    const UPDATE = (event) => {
+      const CARD_BOUNDS = CARD.getBoundingClientRect();
+
+      if (
+        event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
+        event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
+        event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
+        event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+      ) {
+        CARD.style.setProperty('--active', 1);
+      } else {
+        CARD.style.setProperty('--active', CONFIG.opacity);
+      }
+
+      const CARD_CENTER = [
+        CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
+        CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5,
+      ];
+
+      let ANGLE =
+        (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
+          180) /
+        Math.PI;
+
+      ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
+
+      CARD.style.setProperty('--start', ANGLE + 90);
+    };
+
+    document.body.addEventListener('pointermove', UPDATE);
+
+    const RESTYLE = () => {
+      CONTAINER.style.setProperty('--gap', CONFIG.gap);
+      CONTAINER.style.setProperty('--blur', CONFIG.blur);
+      CONTAINER.style.setProperty('--spread', CONFIG.spread);
+      CONTAINER.style.setProperty(
+        '--direction',
+        CONFIG.vertical ? 'column' : 'row'
+      );
+    };
+
+    RESTYLE();
+    UPDATE();
+
+    return () => {
+      document.body.removeEventListener('pointermove', UPDATE);
+    };
+  }, []);
+
   return (
-    <div>
-      <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">Contact with me</p>
-      <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
+    <div className="glow-container-contact-form">
+      <div className="glow-card-contact-form max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5 relative bg-[#101123] text-gray-200 transition-all duration-300 hover:border-transparent w-full">
+        <div className="glows"></div>
         <p className="text-sm text-[#d3d8e8]">{"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}</p>
         <div className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-2">

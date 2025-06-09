@@ -90,17 +90,24 @@ export async function POST(request) {
     // Send email
     const emailSuccess = await sendEmail(payload, message);
 
-    if (telegramSuccess && emailSuccess) {
+    if (!telegramSuccess) {
       return NextResponse.json({
-        success: true,
-        message: 'Message and email sent successfully!',
-      }, { status: 200 });
+        success: false,
+        message: 'Failed to send Telegram message.',
+      }, { status: 500 });
+    }
+
+    if (!emailSuccess) {
+      return NextResponse.json({
+        success: false,
+        message: 'Failed to send email.',
+      }, { status: 500 });
     }
 
     return NextResponse.json({
-      success: false,
-      message: 'Failed to send message or email.',
-    }, { status: 500 });
+      success: true,
+      message: 'Message and email sent successfully!',
+    }, { status: 200 });
   } catch (error) {
     console.error('API Error:', error.message);
     return NextResponse.json({
