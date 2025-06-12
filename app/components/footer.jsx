@@ -1,3 +1,4 @@
+'use client';
 // @flow strict
 import Link from 'next/link';
 import { CgGitFork } from "react-icons/cg";

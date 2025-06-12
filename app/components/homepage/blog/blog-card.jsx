@@ -1,3 +1,4 @@
+'use client';
 // @flow strict
 import { timeConverter } from '@/utils/time-converter';
 import Image from 'next/image';
