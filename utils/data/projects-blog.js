@@ -1,7 +1,7 @@
 export const projectsBlogData = [
     {
       id: 1,
-      title: "OrganiX",
+      title: "OrganiX (SSIP Winner)",
       description: "A mobile app for buying organic fertilizer and selling raw materials, featuring secure authentication, multilingual support, and user feedback capabilities.",
       cover_image: "/projects/organix.jpeg",
       tech: ["Flutter", "Firebase", "Dart", "React.js"],
@@ -42,7 +42,7 @@ export const projectsBlogData = [
     {
       id: 5,
       title: "OrganiX 2.0",
-      description: "An evolved version of OrganiX with role-based farmer verification, land registration authentication, and a multi-level admin system for fertilizer distribution.",
+      description: "An evolved version of OrganiX with role-based farmer verification, land registration authentication, and a multi-level admin system for Navasari Distric fertilizer distribution.",
       cover_image: "/projects/organix2.png",
       tech: ["Node.js", "Express.js", "MongoDB", "Next.js", "React Native", "TypeScript"],
       demo: null,

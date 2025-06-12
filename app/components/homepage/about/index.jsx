@@ -31,13 +31,13 @@ function AboutSection() {
             💼 Open to opportunities where innovation meets execution.
           </p>
         </div>
-        <div className="flex justify-center order-1 lg:order-2">
+        <div className="flex justify-start order-1 lg:order-2">
           <Image
             src={personalData.profile}
-            width={320}
-            height={320}
+            width={400}
+            height={400}
             alt="Harshil Lakhani"
-            className="rounded-2xl shadow-2xl border-4 border-[#25213b] object-cover max-h-[380px] max-w-[380px] transition-transform duration-500 hover:scale-110"
+            className="rounded-2xl shadow-2xl border-4 border-[#25213b] object-cover max-h-[480px] max-w-[480px] transition-transform duration-500 hover:scale-110"
           />
         </div>
       </div>

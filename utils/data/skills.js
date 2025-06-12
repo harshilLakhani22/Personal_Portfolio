@@ -2,7 +2,7 @@ export const skillsData = [
   'Java',
   'Javascript',
   'Dart',
-  'Python',
+  // 'Python',
   'C++',
   'Flutter',
   'Firebase',
