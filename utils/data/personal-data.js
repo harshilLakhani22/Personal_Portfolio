@@ -2,9 +2,9 @@ export const personalData = {
   name: "Harshil Lakhani",
   profile: '/profile1.jpg',
   designation: "Software Developer",
-  description: `👋 Hi, I'm Harshil Lakhani — a curious mind fueled by code and creativity. I'm a professional programmer with a strong self-learning drive and a passion for turning ideas into real-world solutions.
+  description: `👋 Hi, I\'m a passionate and curious software developer fueled by code and creativity. I\'m a professional programmer with a strong self-learning drive and a passion for turning ideas into real-world solutions.
 
-From building smooth mobile experiences with Flutter to crafting scalable APIs in Node.js, I thrive across the full-stack spectrum. Lately, I've been diving deeper into the MERN stack, expanding my toolkit to build web apps that are fast, modern, and impactful.
+From building smooth mobile experiences with Flutter to crafting scalable APIs in Node.js, I thrive across the full-stack spectrum. Lately, I\'ve been diving deeper into the MERN stack, expanding my toolkit to build web apps that are fast, modern, and impactful.
 
 I'm always excited to explore new technologies, tackle challenges, and contribute to making the web a more open and powerful space. If it involves clean code, elegant UI, and solving real problems — I'm all in.
 

@@ -1,17 +1,26 @@
 'use client';
 // @flow strict
 import Link from "next/link";
+import Image from "next/image";
 
 
 function Navbar() {
   return (
     <nav className="bg-transparent">
-      <div className="flex items-center justify-between py-5">
-        <div className="flex flex-shrink-0 items-center">
+      <div className="flex items-center justify-between py-0">
+        <div className="flex flex-shrink-0 items-center p-0 m-0">
           <Link
             href="/"
-            className=" text-[#16f2b3] text-3xl font-bold">
-            Harshil Lakhani
+            className="flex items-center justify-center p-0 m-0 h-auto"
+            // className=" text-[#16f2b3] text-3xl font-bold">
+            // Portfolio
+          >
+            <Image
+              src="/image/logo.png"
+              width={90} // Adjust width as needed
+              height={90} // Adjust height as needed
+              alt="logo"
+            />
           </Link>
         </div>
 

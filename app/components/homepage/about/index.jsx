@@ -20,7 +20,7 @@ function AboutSection() {
             <span className="inline-block align-middle mr-2">👋</span>Who I am?
           </h2>
           <p className="text-gray-200 text-base md:text-lg leading-relaxed font-medium mb-4">
-            Hi, I&apos;m <span className="text-pink-400 font-bold animate-pulse">Harshil Lakhani</span> — a curious developer driven by code, creativity, and continuous learning. I turn ideas into real-world solutions through clean code and thoughtful design.
+            Hi, I&apos;m <span className="text-pink-400 font-bold animate-pulse">a passionate developer</span> — a curious developer driven by code, creativity, and continuous learning. I turn ideas into real-world solutions through clean code and thoughtful design.
           </p>
           <p className="text-gray-200 text-base md:text-lg leading-relaxed font-medium mb-4">
             From building intuitive mobile apps in Flutter to crafting scalable Node.js APIs, I thrive across the full-stack. Lately, I&apos;ve been diving deeper into the MERN stack, expanding my toolkit to create modern, impactful web apps.
