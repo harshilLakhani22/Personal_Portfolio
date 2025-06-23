@@ -16,5 +16,5 @@ I'm always excited to explore new technologies, tackle challenges, and contribut
   linkedIn: 'https://www.linkedin.com/in/harshil-lakhani-21428a22b/',
   leetcode: "https://leetcode.com/u/HarshilLakhani/",
   twitter: "https://x.com/HariLakhani4208",
-  resume: "https://drive.google.com/file/d/1Au4mby5xrn0Kd6K-JRHOdfUSgWYY8hM-/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1tQ6qCKPlZ5FVRGtPTFZN2Dk1W5ngIT6_/view?usp=sharing"
 }
