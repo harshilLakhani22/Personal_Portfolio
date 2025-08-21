@@ -37,3 +37,103 @@ body {
   // padding-top: calc(var(--index) * 2.5rem);
   top: calc(var(--index) * 4rem);
 }
+
+/* Chat Widget Animations */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-bottom-2 {
+  animation: slideInFromBottom 0.3s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Chat Widget Hover Effects */
+.chat-widget-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-widget-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.chat-widget-button:active {
+  transform: scale(0.95);
+}
+
+/* Smooth transitions for chat interface */
+.chat-interface {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Message animations */
+.message-item {
+  transition: all 0.2s ease-out;
+}
+
+.message-item:hover {
+  transform: translateY(-1px);
+}
+
+/* Input focus effects */
+.chat-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+/* Button hover states */
+.chat-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.chat-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chat-button:active:not(:disabled) {
+  transform: translateY(0);
+}

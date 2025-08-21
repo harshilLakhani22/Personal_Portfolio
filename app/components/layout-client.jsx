@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Footer from "./footer";
 import ScrollToTop from "./helper/scroll-to-top";
 import Navbar from "./navbar";
+import ChatWidget from "./chatbot/ChatWidget";
 
 const ToastProvider = dynamic(() => import("./helper/ToastProvider"), { ssr: false });
 
@@ -19,6 +20,7 @@ export default function ClientLayout({ children }) {
         <ScrollToTop />
       </main>
       <Footer />
+      <ChatWidget />
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
     </>
   );
