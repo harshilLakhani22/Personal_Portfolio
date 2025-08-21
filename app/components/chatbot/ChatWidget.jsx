@@ -99,6 +99,9 @@ const ChatWidget = () => {
     setError(null);
 
     try {
+      console.log('Sending message to API:', inputValue.trim());
+      console.log('API endpoint:', '/api/chat');
+      
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -110,8 +113,12 @@ const ChatWidget = () => {
         }),
       });
 
+      console.log('API response status:', response.status);
+      console.log('API response headers:', response.headers);
+
       if (response.ok) {
         const data = await response.json();
+        console.log('API response data:', data);
         
         // Simulate typing delay for better UX
         setTimeout(() => {
@@ -126,10 +133,14 @@ const ChatWidget = () => {
         }, 1000);
         
       } else {
-        throw new Error('Failed to get response');
+        const errorText = await response.text();
+        console.error('API error response:', errorText);
+        throw new Error(`Failed to get response: ${response.status} ${errorText}`);
       }
     } catch (error) {
-      setError('Sorry, I\'m having trouble connecting right now. Please try again later.');
+      console.error('Chat API error:', error);
+      console.error('Error details:', error.message);
+      setError(`Sorry, I'm having trouble connecting right now. Please try again later. (Error: ${error.message})`);
       setIsTyping(false);
     } finally {
       setIsLoading(false);
@@ -153,7 +164,7 @@ const ChatWidget = () => {
   return (
     <>
       {/* Floating Chat Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 right-6 z-[9999]">
         <button
           onClick={toggleChat}
           className="chat-widget-button bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl"
@@ -165,7 +176,7 @@ const ChatWidget = () => {
 
       {/* Chat Interface - Made taller */}
       {isOpen && (
-        <div className="chat-interface fixed bottom-24 right-6 z-40 w-[28rem] h-[38rem] bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col slide-in-from-bottom-2">
+        <div className="chat-interface fixed bottom-24 right-6 z-[9998] w-[28rem] h-[38rem] bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col slide-in-from-bottom-2">
           {/* Chat Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-lg flex justify-between items-center">
             <div>

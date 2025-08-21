@@ -137,3 +137,38 @@ body {
 .chat-button:active:not(:disabled) {
   transform: translateY(0);
 }
+
+/* Chat Widget Z-Index and Layering */
+.chat-widget-button {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+.chat-interface {
+  z-index: 9998 !important;
+  position: fixed !important;
+  /* Ensure it's above everything */
+  isolation: isolate;
+}
+
+/* Force chat widget above all content */
+.chat-widget-button,
+.chat-interface {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+/* Additional safety for overlapping elements */
+.chat-widget-button {
+  z-index: 9999 !important;
+}
+
+.chat-interface {
+  z-index: 9998 !important;
+}
+
+/* Ensure chat elements don't get hidden by other content */
+.chat-interface * {
+  position: relative;
+  z-index: inherit;
+}
