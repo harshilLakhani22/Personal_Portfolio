@@ -169,7 +169,7 @@ const ChatWidget = () => {
           {/* Chat Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-lg flex justify-between items-center">
             <div>
-              <h3 className="font-semibold">Chat with Harshil's Assistant</h3>
+              <h3 className="font-semibold">Chat with Harshil&apos;s Assistant</h3>
               {/* <p className="text-sm opacity-90">Ask me about Harshil!</p> */}
             </div>
             <div className="flex gap-2">
