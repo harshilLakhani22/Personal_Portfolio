@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { FiMessageCircle, FiX, FiSend, FiMinimize2, FiRefreshCw } from 'react-icons/fi';
 
 const ChatWidget = () => {
+  console.log('ChatWidget component is mounting...');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -41,7 +42,7 @@ const ChatWidget = () => {
           ...msg,
           timestamp: new Date(msg.timestamp)
         }));
-        
+
         // Only load if messages are from today
         const today = new Date().toDateString();
         const lastMessageDate = new Date(messagesWithDates[messagesWithDates.length - 1]?.timestamp).toDateString();
@@ -101,7 +102,7 @@ const ChatWidget = () => {
     try {
       console.log('Sending message to API:', inputValue.trim());
       console.log('API endpoint:', '/api/chat');
-      
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -119,7 +120,7 @@ const ChatWidget = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('API response data:', data);
-        
+
         // Simulate typing delay for better UX
         setTimeout(() => {
           const botMessage = {
@@ -131,7 +132,7 @@ const ChatWidget = () => {
           setMessages(prev => [...prev, botMessage]);
           setIsTyping(false);
         }, 1000);
-        
+
       } else {
         const errorText = await response.text();
         console.error('API error response:', errorText);
@@ -219,22 +220,20 @@ const ChatWidget = () => {
                 className={`message-item flex ${message.type === 'user' ? 'justify-end' : 'justify-start'} fade-in`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
-                    message.type === 'user'
+                  className={`max-w-[80%] p-3 rounded-lg ${message.type === 'user'
                       ? 'bg-blue-600 text-white'
                       : 'bg-white text-gray-800 border border-gray-200'
-                  }`}
+                    }`}
                 >
                   <p className="text-sm">{message.content}</p>
-                  <p className={`text-xs mt-1 ${
-                    message.type === 'user' ? 'text-blue-100' : 'text-gray-500'
-                  }`}>
+                  <p className={`text-xs mt-1 ${message.type === 'user' ? 'text-blue-100' : 'text-gray-500'
+                    }`}>
                     {formatTimestamp(message.timestamp)}
                   </p>
                 </div>
               </div>
             ))}
-            
+
             {/* Error Message */}
             {error && (
               <div className="message-item flex justify-start fade-in">
@@ -243,7 +242,7 @@ const ChatWidget = () => {
                 </div>
               </div>
             )}
-            
+
             {/* Typing Indicator */}
             {isTyping && (
               <div className="message-item flex justify-start fade-in">
@@ -256,7 +255,7 @@ const ChatWidget = () => {
                 </div>
               </div>
             )}
-            
+
             <div ref={messagesEndRef} />
           </div>
 
