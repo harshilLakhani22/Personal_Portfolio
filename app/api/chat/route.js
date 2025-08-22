@@ -12,6 +12,7 @@ INSTRUCTIONS: You are an AI assistant for Harshil's portfolio website. Answer qu
 `;
 }
 
+
 // // Enhanced response generation with more context awareness
 // function generateEnhancedResponse(userMessage, conversationHistory) {
 //     const message = userMessage.toLowerCase();
@@ -99,6 +100,7 @@ INSTRUCTIONS: You are an AI assistant for Harshil's portfolio website. Answer qu
 //     return `I'd be happy to help you learn more about Harshil! You can ask me about his skills, projects, work experience, education, work style, or any other aspects of his professional background. Some popular questions include "What are Harshil's skills?", "Tell me about his projects", "What's his work experience?", or "How does he approach development?". What specific information are you looking for?`;
 // }
 
+// new generation of response
 // Enhanced response generation for local fallback
 function generateEnhancedResponse(userMessage, conversationHistory) {
     const msg = userMessage.toLowerCase();
